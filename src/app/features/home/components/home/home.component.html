@@ -1,0 +1,22 @@
+<mat-card class="top-card">
+  <!-- <mat-card-header>
+    <mat-card-subtitle>Illlidan</mat-card-subtitle>
+    <mat-card-title>DH class</mat-card-title>
+  </mat-card-header> -->
+  <mat-card-content>
+    <pre>
+      {{ kansasWeather | json }}
+    </pre>
+  </mat-card-content>
+</mat-card>
+
+<h2 class="starting-title">
+  On this page
+</h2>
+
+<section class="article-container">
+  <div class="chart-container">
+    <canvas  id="MyChart" >{{ chart }}</canvas>
+  </div>
+</section>
+

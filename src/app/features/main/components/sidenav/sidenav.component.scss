@@ -1,0 +1,31 @@
+.side-item {
+
+  .hov { display: none; }
+
+  &:hover {
+    text-decoration: underline;
+
+    .hov { display: initial; }
+  }
+}
+
+.expansion-item {
+  padding: 0 16px;
+  font-size: 14px;
+}
+
+.side-item-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+
+  a {
+    &:hover {
+
+      .text {
+    
+      }
+    }
+  }
+}

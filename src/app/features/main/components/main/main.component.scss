@@ -1,0 +1,141 @@
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.layout-is-mobile .layout-toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+  padding: 0;
+}
+
+.toolbar-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  align-items: center;
+  background-color: var(--bg-header);
+  color: var(--bg-contents);
+
+  .side-icon {
+    width: 50%;
+    height: 100%;
+  }
+
+  .btn {
+    width: 6.5em;
+    color: var(--bg-contents);
+    height: 100%;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    &.btn-menu {
+      background-color: transparent;
+      transition: all .3s ease-in-out;
+
+      &:hover {
+        background-color: var(--clr-supporting-2);
+        font-size: 12px;
+      }
+    }
+  }
+  .side-status {
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .btn-primary {
+      background-color: transparent;
+      transition: all .3s ease-in-out;
+
+      &:hover {
+        background-color: var(--clr-supporting-1);
+        font-size: 12px;
+      }
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      transition: all .3s ease-in-out;
+
+      &:hover {
+        background-color: var(--clr-secondary);
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.layout-app-name {
+  margin: 0;
+}
+
+.layout-sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
+}
+
+.layout-is-mobile .layout-sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+     `<body>` to be our scrolling element for mobile layouts. */
+  flex: 1 0 auto;
+}
+
+.toolbar-item-spacer {
+  flex: 1 1 auto;
+}
+
+.app-container {
+  height: 90%;
+  margin: 0;
+}  
+.app-sidenav {
+  width: 230px;
+}
+.app-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+mat-sidenav-content {
+  
+  .whole-container {
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+    display: flex;
+
+    .main-placeholder {
+      width: calc(100% - 15em);
+      padding: 0.4em;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+
+    .side-placeholder {
+      width: 15em;
+      display: flex;
+      flex-direction: column;
+      padding: 0.4em;
+
+    }
+  }
+}
+
+@media (max-width: 768px) { 
+  
+}
