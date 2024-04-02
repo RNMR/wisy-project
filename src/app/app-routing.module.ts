@@ -4,21 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'main', pathMatch: 'full' },
-  // { path: '', redirectTo: 'instructores', pathMatch: 'full' },
+  { path: '', redirectTo: 'weather', pathMatch: 'full' },
   {
-    path: 'main',
+    path: 'weather',
     loadChildren: () => import('./features/main/main.module').then(m => m.MainModule),
-    // ...canActivate(() => redirectUnauthorizedTo(['/autenticacion']))
   },
-  // {
-  //   path: 'administrador',
-  //   loadChildren: () => import('./features/admin/admin.module').then(m => m.AdminModule)
-  // },
-  // {
-  //   path: 'autenticacion',
-  //   loadChildren: () => import('./features/auth/auth.module').then(m => m.AuthModule)
-  // },
 ];
 
 @NgModule({

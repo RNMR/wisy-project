@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable, tap } from "rxjs";
+import { Observable, catchError, tap, throwError } from "rxjs";
 import { GenericService } from "src/app/app-generic.service";
 import { environment } from "src/environments/environment";
 
@@ -21,6 +21,10 @@ export class WeatherService {
         .pipe(
           tap((response) => {
             return response;
+          }),
+          catchError(err => {
+            console.log(err)
+            return throwError(()=> err)
           })
         )
     );
@@ -34,7 +38,7 @@ export class WeatherService {
     return (
       this.genericService
         .apiGet(
-          `${environment.kansas_api}`,
+          `${environment.columbia_api}`,
         )
         .pipe(
           tap((response) => {

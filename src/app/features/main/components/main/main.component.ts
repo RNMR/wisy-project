@@ -12,11 +12,6 @@ export class MainComponent implements OnDestroy, OnInit {
 
   isLogged = true;
   user: string | null | undefined = "";
-  fillerContent = Array.from(
-    {length: 20},
-    () =>
-      `Yale School of Art.`,
-  );
 
   private _mobileQueryListener: () => void;
 
@@ -33,7 +28,7 @@ export class MainComponent implements OnDestroy, OnInit {
 
   ngOnInit(): void {
     this.router.events.subscribe((event) => {
-      event instanceof NavigationEnd ? console.log(event): null
+      event instanceof NavigationEnd ? console.log(event): null // irrelevante
     }); 
   }
   
